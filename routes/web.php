@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProdutosController;
+use App\Http\Controllers\VendasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +14,10 @@ use App\Http\Controllers\ProdutosController;
 |
 */
 
-Route::get('/loja/usados', [ProdutosController::class , 'indexUsados']);
-Route::get('/loja/novos', [ProdutosController::class , 'indexNovos']);
-Route::get('/loja', [ProdutosController::class , 'index']);
-
+Route::get('/vendas', [VendasController::class , 'listarVendas']);
+Route::get('/vendas/ver/{id}', [VendasController::class , 'verVendas']);
+Route::get('/vendas/nova/{produto}/{quantidade}/{preco}', [VendasController::class , 'cadastrarVenda']);
+Route::get('/vendas/atualizar/{id}/{produto}/{quantidade}/{preco}', [VendasController::class , 'atualizarVenda']);
+Route::get('/vendas/excluir/{id}', [VendasController::class , 'excluirVenda']);
 
 
