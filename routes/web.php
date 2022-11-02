@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\VendasController;
+use App\Http\Controllers\BandasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +14,8 @@ use App\Http\Controllers\VendasController;
 |
 */
 
-Route::get('/vendas', [VendasController::class , 'listarVendas']);
-Route::get('/vendas/ver/{id}', [VendasController::class , 'verVendas']);
-Route::get('/vendas/nova/{produto}/{quantidade}/{preco}', [VendasController::class , 'cadastrarVenda']);
-Route::get('/vendas/atualizar/{id}/{produto}/{quantidade}/{preco}', [VendasController::class , 'atualizarVenda']);
-Route::get('/vendas/excluir/{id}', [VendasController::class , 'excluirVenda']);
+Route::get('/index', [BandasController::class, 'index'])->name('bandas-index');
+Route::get('/create', [BandasController::class, 'create'])->name('bandas-create');
+Route::post('/store', [BandasController::class, 'store'])->name('bandas-store');
 
 
